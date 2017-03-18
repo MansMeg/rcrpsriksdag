@@ -1,0 +1,18 @@
+Package: rcrpsriksdag
+Type: Package
+Title: Corpora from the Swedish parliament
+Version: 0.1
+Date: 2017-03-16
+Author: Mans Magnusson
+Maintainer: Mans Magnusson <mons.magnusson@gmail.com>
+Description: An R package with text data from the Swedish parliament
+License: LGP-3
+Suggest: 
+  checkmate,
+  devtools,
+  jsonlite,
+  stringr,
+  tidytext,
+  dplyr,
+  git2r
+RoxygenNote: 5.0.1
