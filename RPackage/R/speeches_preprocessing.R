@@ -1,5 +1,8 @@
 #' Preprocessing of the speeches corpus
 #' 
+#' @description 
+#' Parse the variables into correct R format.
+#' 
 #' @param corpus The speeches corpus.
 #' 
 #' @keywords Internal
