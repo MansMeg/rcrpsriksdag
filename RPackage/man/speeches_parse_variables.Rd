@@ -13,7 +13,7 @@ speeches_remove_observations(corpus)
 \item{corpus}{The speeches corpus.}
 }
 \description{
-Preprocessing of the speeches corpus
+Parse the variables into correct R format.
 }
 \keyword{Internal}
 

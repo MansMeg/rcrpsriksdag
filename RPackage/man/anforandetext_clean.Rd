@@ -8,6 +8,8 @@
 \alias{anforandetext_clean_punctuation}
 \alias{anforandetext_clean_remove_greetings}
 \alias{anforandetext_clean_symbols}
+\alias{anforandetext_handle_abbreviations}
+\alias{anforandetext_mark_sentances}
 \title{Clean the anforandetext in the corpus file}
 \usage{
 anforandetext_clean(anforandetext)
@@ -23,6 +25,10 @@ anforandetext_clean_handle_digits(anforandetext)
 anforandetext_clean_symbols(anforandetext)
 
 anforandetext_clean_punctuation(anforandetext)
+
+anforandetext_handle_abbreviations(anforandetext)
+
+anforandetext_mark_sentances(anforandetext)
 }
 \arguments{
 \item{anforandetext}{a character vector from anforandetext in corpus file}
