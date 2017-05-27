@@ -3,7 +3,7 @@
 #' Tokenize and remove stopwords and rare words from the \code{speeches} corpus.
 #' 
 #' @param corpus a speeches corpus to tokenize.
-#' @param rare_word_limit The rare word limit to use (tokens for word types occuring less or equal to the limit is removed)..
+#' @param rare_word_limit The rare word limit to use (tokens for word types occuring less or equal to the limit is removed).
 #' @param stop_list a character vector
 #' 
 #' @examples 
@@ -11,11 +11,11 @@
 #' speeches_tokenized <- tokenize_speeches(speeches, 10, stop_words_se)
 #' 
 #' @export
-tokenize_speeches <- function(corpus, rare_word_limit = 10, stop_list){
+tokenize_speeches <- function(corpus, rare_word_limit = 10, stop_list = NULL){
   checkmate::assert_class(corpus, "tbl_df")
   checkmate::assert_subset(c("anforande_id", "anforandetext"), names(corpus))
   checkmate::assert_integerish(rare_word_limit, lower = 0)
-  checkmate::assert_character(stop_list, any.missing = FALSE)
+  checkmate::assert_character(stop_list, any.missing = FALSE, null.ok = TRUE)
     
   # Create one-token-per-row object
   txt <- dplyr::data_frame(anforande_id = as.factor(corpus$anforande_id), txt = corpus$anforandetext)
