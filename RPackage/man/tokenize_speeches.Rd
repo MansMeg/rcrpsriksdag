@@ -4,7 +4,7 @@
 \alias{tokenize_speeches}
 \title{Tokenize the corpus}
 \usage{
-tokenize_speeches(corpus, rare_word_limit = 0, stop_list = NULL)
+tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL)
 }
 \arguments{
 \item{corpus}{a speeches corpus to tokenize.}
