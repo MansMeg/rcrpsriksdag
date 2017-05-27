@@ -1,6 +1,6 @@
 #' Clean the parti variable in the corpus file
 #'
-#' @param parti a character vector from anforandetext in corpus file
+#' @param talare a character vector from speaker in corpus file
 #'
 #' @keywords Internal
 talare_clean <- function(talare){
@@ -11,8 +11,11 @@ talare_clean <- function(talare){
   
   talare <- stringr::str_replace_all(talare, "^.+minister(n)?", " ")
   talare <- stringr::str_replace_all(talare, "^.+mininister", " ")
-  talare <- stringr::str_replace_all(talare, "^.+president", " ")
+  talare <- stringr::str_replace_all(talare, "^.+president(en)?", " ")
   talare <- stringr::str_replace_all(talare, "^.*statsrådet", " ")
+  # talare[stringr::str_detect(talare, "^.*minist.+")]
+  talare <- stringr::str_replace_all(talare, "^.*minist.+", " ")
+  
   talare <- stringr::str_trim(talare)
 
   talare <- stringr::str_replace_all(talare, "\\(kds\\)", "\\(kd\\)")  
@@ -27,20 +30,46 @@ talare_clean <- function(talare){
   talare <- stringr::str_replace_all(talare, "^en$", "namn saknas")
   
   talare <- stringr::str_replace_all(talare, "talmanen", "talmannen")
+  talare <- stringr::str_replace_all(talare, ".*f.rste vice talman ", "")
+  talare <- stringr::str_replace_all(talare, ".*andre vice talman ", "")
+  talare <- stringr::str_replace_all(talare, ".*tredje vice talman ", "")
+  
   talare <- stringr::str_replace_all(talare, "andre vice talman", "andre vice talmannen")
   talare <- stringr::str_replace_all(talare, ".*av andre vice talmannen därefter.*", "andre vice talmannen")
   talare <- stringr::str_replace_all(talare, ".*av andre vice talmannennen därefter.*", "andre vice talmannen")
   talare <- stringr::str_replace_all(talare, ".*av förste vice talmannen därefter.*", "förste vice talmannen")
   talare <- stringr::str_replace_all(talare, "talmannnen", "talmannen")
   
-  talare <- stringr::str_replace_all(talare, "anderssson", "andersson")
-  talare <- stringr::str_replace_all(talare, "ulla vester", "ulla wester")
-  talare <- stringr::str_replace_all(talare, "ulf nilson", "ulf nilsson")
-  talare <- stringr::str_replace_all(talare, "tobias bill-ström", "tobias billström")
-  talare <- stringr::str_replace_all(talare, "tassos stafilidis", "tasso stafilidis")
-  talare <- stringr::str_replace_all(talare, "tasso stafilides", "tasso stafilidis")
+  talare <- stringr::str_replace_all(talare, "( )+", " ")
+  # talare[stringr::str_detect(talare, "([:lower:])\\(")] 
+  talare <- stringr::str_replace_all(talare, "([:lower:])\\(", "\\1 \\(")
+  # talare[stringr::str_detect(talare, "( )*-( )*")]
+  talare <- stringr::str_replace_all(talare, "( )*-( )*", "-")
+
+  speaker_errors <- get_speaker_errors()
+  for(i in 1:nrow(speaker_errors)){
+    error_exists <- any(stringr::str_detect(string = talare, pattern = speaker_errors[i,1]))
+    if(!error_exists) cat(paste0(speaker_errors[i,1], " don't exist.\n"))
+    talare <- stringr::str_replace_all(talare, speaker_errors[i,1], speaker_errors[i,2])
+  }
+
+  talare <- stringr::str_trim(talare)
   
+  # table(talare)
+  # table(talare[stringr::str_detect(talare, "björkman")])
   talare <- as.factor(talare)
   
   talare
+}
+
+#' Get errors in speaker from csv file
+#' @keywords Internal
+#' @rdname talare_clean
+get_speaker_errors <- function(){
+  speaker_errors <- read.csv2("RPackage/data-raw/data_errors/speaker_errors.csv", stringsAsFactors = FALSE)
+  speaker_errors[,1] <- stringr::str_replace_all(speaker_errors[,1], "\\(", "\\\\\\(")
+  speaker_errors[,2] <- stringr::str_replace_all(speaker_errors[,2], "\\(", "\\\\\\(")
+  speaker_errors[,1] <- stringr::str_replace_all(speaker_errors[,1], "\\)", "\\\\\\)")
+  speaker_errors[,2] <- stringr::str_replace_all(speaker_errors[,2], "\\)", "\\\\\\)")
+  speaker_errors
 }
