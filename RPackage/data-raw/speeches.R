@@ -27,13 +27,14 @@ speeches$anforandetext <-
 print(Sys.time())
 
 speeches$parti <- 
-  rcrpsriksdag:::parti_clean(parti = speeches$parti)
+  rcrpsriksdag:::parti_clean(parti = speeches$parti, talare = speeches$talare)
 speeches$role <- 
   rcrpsriksdag:::create_role(talare = speeches$talare)
 speeches$talare <- 
   rcrpsriksdag:::talare_clean(talare = speeches$talare)
 speeches$debate_type <- 
-  rcrpsriksdag:::create_debate_type(avsnittsrubrik = as.character(speeches$avsnittsrubrik))
+  rcrpsriksdag:::create_debate_type(avsnittsrubrik = as.character(speeches$avsnittsrubrik),
+                                    kammaraktivitet =  as.character(speeches$kammaraktivitet))
 
 # Remove observations
 speeches <- rcrpsriksdag:::speeches_remove_observations(speeches)
