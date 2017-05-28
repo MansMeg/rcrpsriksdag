@@ -7,15 +7,23 @@
 #' @keywords Internal
 anforandetext_clean <- function(anforandetext){
   checkmate::assert_character(anforandetext)
+  # anforandetext <- speeches_raw$anforandetext
   
   anforandetext <- anforandetext_clean_basic(anforandetext)
   anforandetext <- anforandetext_clean_correct_errors(anforandetext)
   anforandetext <- anforandetext_clean_remove_greetings(anforandetext)
-  anforandetext <- tolower(anforandetext)
-  anforandetext <- stringr::str_replace_all(anforandetext, "\\(.*\\)", " ") # Remove paranthesis
-  anforandetext <- anforandetext_clean_handle_digits(anforandetext)
+
+  # Remove paranthesis
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\(.*\\)", " ") 
+  
   anforandetext <- anforandetext_clean_symbols(anforandetext)
-  anforandetext <- anforandetext_clean_punctuation(anforandetext)
+  anforandetext <- anforandetext_handle_abbreviations(anforandetext)
+
+  # anforandetext <- anforandetext_mark_sentances(anforandetext)
+  
+  anforandetext <- anforandetext_clean_handle_digits(anforandetext)
+  
+  anforandetext <- tolower(anforandetext)
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
   
   # Final trimming of space
@@ -151,8 +159,6 @@ anforandetext_clean_symbols <- function(anforandetext){
 #' @rdname anforandetext_clean
 anforandetext_clean_punctuation <- function(anforandetext){
   checkmate::assert_character(anforandetext)
-  ## Handle punctuations
-  # anforandetext <- stringr::str_replace_all(anforandetext, "[:punct:]", " ")
   
   # Handle :
   anforandetext <- stringr::str_replace_all(anforandetext, " s:t ", " st ") # Special
@@ -163,11 +169,24 @@ anforandetext_clean_punctuation <- function(anforandetext){
   # Handle . in web adresses
   anforandetext <- stringr::str_replace_all(anforandetext, "([:alpha:]+)(\\.)(com|dk|nu|se|org|net|fi|no)" , "\\1_\\3")
   
-  # Handle common abbrv (with .)
-  anforandetext <- stringr::str_replace_all(anforandetext, " t\\.ex ", " t_ex ")    
-  anforandetext <- stringr::str_replace_all(anforandetext, " bl\\.a ", " bl_a ")
+  # Handle other punctuations
+  anforandetext <- stringr::str_replace_all(anforandetext, "[.?!&,;'/\]", " ")
+  
+  anforandetext
+}
+
+
+
+#' @rdname anforandetext_clean
+anforandetext_handle_abbreviations <- function(anforandetext){
+  checkmate::assert_character(anforandetext)
+  ## Handle punctuations
+
+  # Handle common abbrv (with .) by tokenizing those
+  anforandetext <- stringr::str_replace_all(anforandetext, " t\\.ex", " t_ex")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " bl\\.a", " bl_a")
   anforandetext <- stringr::str_replace_all(anforandetext, " m\\.m", " m_m")
-  anforandetext <- stringr::str_replace_all(anforandetext, " s\\.k ", " s_k ")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " s\\.k", " s_k")    
   anforandetext <- stringr::str_replace_all(anforandetext, " t\\.o\\.m", " t_o_m")
   anforandetext <- stringr::str_replace_all(anforandetext, " t\\.om", " t_o_m")
   anforandetext <- stringr::str_replace_all(anforandetext, " fr\\.o\\.m", " fr_o_m")
@@ -176,12 +195,31 @@ anforandetext_clean_punctuation <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, " f\\.d", " f_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " o\\.d", " o_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " e\\.d", " e_d")
+  anforandetext <- stringr::str_replace_all(anforandetext, " kl\\.", " kl")    
   
-  # Handle other punctuations
-  # anforandetext <- stringr::str_replace_all(anforandetext, "[.?!&,;'/\]", " ")
-  anforandetext <- stringr::str_replace_all(anforandetext, "[:punct:]", " ")
-  
+  anforandetext <- stringr::str_replace_all(anforandetext, " T\\.ex", " T_ex")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " Bl\\.a", " Bl_a")
+  anforandetext <- stringr::str_replace_all(anforandetext, " M\\.m", " M_m")
+  anforandetext <- stringr::str_replace_all(anforandetext, " S\\.k", " S_k")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " T\\.o\\.m", " T_o_m")
+  anforandetext <- stringr::str_replace_all(anforandetext, " T\\.om", " T_o_m")
+  anforandetext <- stringr::str_replace_all(anforandetext, " Fr\\.o\\.m", " Fr_o_m")
+  anforandetext <- stringr::str_replace_all(anforandetext, " Fr\\.om", " Fr_o_m")
+  anforandetext <- stringr::str_replace_all(anforandetext, " M\\.fl", " M_fl")
+  anforandetext <- stringr::str_replace_all(anforandetext, " F\\.d", " F_d")
+  anforandetext <- stringr::str_replace_all(anforandetext, " O\\.d", " O_d")
+  anforandetext <- stringr::str_replace_all(anforandetext, " E\\.d", " E_d")
+  anforandetext <- stringr::str_replace_all(anforandetext, " Kl\\.", " Kl")    
+
   anforandetext
 }
 
 
+#' @rdname anforandetext_clean
+anforandetext_mark_sentances <- function(anforandetext){
+  checkmate::assert_character(anforandetext)
+  
+  # Mark sentance ending
+  stringr::str_replace_all(anforandetext[2], "([:lower:])(\\.+)( +)([:upper:])", "\\1 \n \\4")
+  
+}
