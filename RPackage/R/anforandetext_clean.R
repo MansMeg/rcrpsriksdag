@@ -170,7 +170,8 @@ anforandetext_clean_punctuation <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, "([:alpha:]+)(\\.)(com|dk|nu|se|org|net|fi|no)" , "\\1_\\3")
   
   # Handle other punctuations
-  anforandetext <- stringr::str_replace_all(anforandetext, "[.?!&,;'/\]", " ")
+  # anforandetext <- stringr::str_replace_all(anforandetext, "[.?!&,;'/\]", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "[:punct:]", " ")
   
   anforandetext
 }
