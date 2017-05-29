@@ -4,7 +4,7 @@
 \alias{parti_clean}
 \title{Clean the parti variable in the corpus file}
 \usage{
-parti_clean(parti)
+parti_clean(parti, talare)
 }
 \arguments{
 \item{parti}{a character vector from anforandetext in corpus file}

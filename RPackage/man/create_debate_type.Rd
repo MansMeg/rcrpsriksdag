@@ -4,10 +4,12 @@
 \alias{create_debate_type}
 \title{Create debate type}
 \usage{
-create_debate_type(avsnittsrubrik)
+create_debate_type(avsnittsrubrik, kammaraktivitet)
 }
 \arguments{
 \item{avsnittsrubrik}{Avsnittsrubrik to use to identify \code{debate_type}}
+
+\item{kammaraktivitet}{Kammaraktivitet to use to identify \code{debate_type}}
 }
 \description{
 Create debate type
