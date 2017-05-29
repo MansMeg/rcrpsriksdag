@@ -16,30 +16,34 @@ devtools::use_data(speeches_raw, overwrite = TRUE, pkg = "RPackage/")
 print(Sys.time())
 speeches <- rcrpsriksdag:::speeches_parse_variables(speeches_raw)
 
-
 # Clean variables
 print(Sys.time())
+# TODO jämför med och utan commit - var skiljer sig slutresultatet och hur?
+speeches$role <- 
+  rcrpsriksdag:::create_role(talare = speeches$talare)
+speeches$talare <- 
+  rcrpsriksdag:::talare_clean(talare = speeches$talare)
+speeches$parti <- 
+  rcrpsriksdag:::parti_clean(parti = speeches$parti, talare = speeches$talare)
+speeches$debate_type <- 
+  rcrpsriksdag:::create_debate_type(avsnittsrubrik = as.character(speeches$avsnittsrubrik),
+                                    kammaraktivitet =  as.character(speeches$kammaraktivitet))
+
+# Clean anforandetext
+print(Sys.time())
 speeches$anforandetext <- 
-  rcrpsriksdag:::anforandetext_clean(speeches$anforandetext)
+  anforandetext_clean(speeches$anforandetext)
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_replace_collocation(anforandetext = speeches$anforandetext, collocation_folder = "RPackage/data-raw/collocations/")
 print(Sys.time())
 
-speeches$parti <- 
-  rcrpsriksdag:::parti_clean(parti = speeches$parti, talare = speeches$talare)
-speeches$role <- 
-  rcrpsriksdag:::create_role(talare = speeches$talare)
-speeches$talare <- 
-  rcrpsriksdag:::talare_clean(talare = speeches$talare)
-speeches$debate_type <- 
-  rcrpsriksdag:::create_debate_type(avsnittsrubrik = as.character(speeches$avsnittsrubrik),
-                                    kammaraktivitet =  as.character(speeches$kammaraktivitet))
-
 # Remove observations
 speeches <- rcrpsriksdag:::speeches_remove_observations(speeches)
 attr(speeches, "created_date") <- Sys.time() 
 attr(speeches, "created_git_hash") <- rcrpsriksdag:::get_git_sha1()
+
+# save(speeches, file = "tmp_speeches.rdata")
 
 print(Sys.time())
 devtools::use_data(speeches, overwrite = TRUE, pkg = "RPackage/")
