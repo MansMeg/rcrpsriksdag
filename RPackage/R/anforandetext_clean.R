@@ -21,10 +21,10 @@ anforandetext_clean <- function(anforandetext){
 
   # anforandetext <- anforandetext_mark_sentances(anforandetext)
   
-  anforandetext <- anforandetext_clean_handle_digits(anforandetext)
-  
   anforandetext <- tolower(anforandetext)
+  
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
+  anforandetext <- anforandetext_clean_handle_digits(anforandetext)
   
   # Final trimming of space
   anforandetext <- stringr::str_replace_all(anforandetext, "[:space:]+", " ")
