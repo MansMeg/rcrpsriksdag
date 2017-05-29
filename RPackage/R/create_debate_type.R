@@ -35,8 +35,8 @@ create_debate_type <- function(avsnittsrubrik, kammaraktivitet){
   debate_type[stringr::str_detect(kammaraktivitet, "allm.npolitisk debatt")] <- "General debate"
   debate_type[stringr::str_detect(kammaraktivitet, "debatt vid allm.n debattimme")] <- "General debate"
   
-  debate_type[stringr::str_detect(speeches_tmp$avsnittsrubrik, "regeringen") & 
-                stringr::str_detect(speeches_tmp$avsnittsrubrik, "[Ii]nformation")] <- "Information from government"
+  debate_type[stringr::str_detect(speeches$avsnittsrubrik, "regeringen") & 
+                stringr::str_detect(speeches$avsnittsrubrik, "[Ii]nformation")] <- "Information from government"
   debate_type[stringr::str_detect(kammaraktivitet, "information fr.n regeringen")] <- "Information from government"
   
   # table(debate_type)
