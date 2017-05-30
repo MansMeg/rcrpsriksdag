@@ -125,7 +125,6 @@ anforandetext_clean_remove_greetings <- function(anforandetext){
 anforandetext_clean_handle_digits <- function(anforandetext){
 
   # Handle digits
-  anforandetext <- stringr::str_replace_all(anforandetext, "[12][:digit:]{3}(\\/)[12][:digit:]{1,3}", "YYYY")
   anforandetext <- stringr::str_replace_all(anforandetext, "(1)[:digit:]{3}|(20)[:digit:]{2}", "YYYY")
   anforandetext <- stringr::str_replace_all(anforandetext, "[:digit:][:punct:][:digit:]", "N_N")
   anforandetext <- stringr::str_replace_all(anforandetext, "[:digit:]", "N")
@@ -196,7 +195,7 @@ anforandetext_handle_abbreviations <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, " f\\.d", " f_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " o\\.d", " o_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " e\\.d", " e_d")
-  anforandetext <- stringr::str_replace_all(anforandetext, " kl\\.", " kl")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " kl\\.", " kl ")    
   
   anforandetext <- stringr::str_replace_all(anforandetext, " T\\.ex", " T_ex")    
   anforandetext <- stringr::str_replace_all(anforandetext, " Bl\\.a", " Bl_a")
@@ -210,7 +209,7 @@ anforandetext_handle_abbreviations <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, " F\\.d", " F_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " O\\.d", " O_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " E\\.d", " E_d")
-  anforandetext <- stringr::str_replace_all(anforandetext, " Kl\\.", " Kl")    
+  anforandetext <- stringr::str_replace_all(anforandetext, " Kl\\.", " Kl ")    
 
   anforandetext
 }
