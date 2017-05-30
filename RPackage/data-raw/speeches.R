@@ -32,7 +32,7 @@ speeches$debate_type <-
 # Clean anforandetext
 print(Sys.time())
 speeches$anforandetext <- 
-  anforandetext_clean(speeches$anforandetext)
+  rcrpsriksdag:::anforandetext_clean(speeches$anforandetext)
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_replace_collocation(anforandetext = speeches$anforandetext, collocation_folder = "RPackage/data-raw/collocations/")
