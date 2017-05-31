@@ -16,13 +16,13 @@ anforandetext_clean <- function(anforandetext){
   # Remove paranthesis
   anforandetext <- stringr::str_replace_all(anforandetext, "\\(.*\\)", " ") 
   
-  anforandetext <- anforandetext_clean_symbols(anforandetext)
   anforandetext <- anforandetext_handle_abbreviations(anforandetext)
 
   # anforandetext <- anforandetext_mark_sentances(anforandetext)
   
   anforandetext <- tolower(anforandetext)
   
+  anforandetext <- anforandetext_clean_symbols(anforandetext)
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
   anforandetext <- anforandetext_clean_handle_digits(anforandetext)
   
@@ -134,6 +134,9 @@ anforandetext_clean_handle_digits <- function(anforandetext){
 }
 
 #' @rdname anforandetext_clean
+#' @details 
+#' \code{anforandetext_clean_symbols} needs to be called after 
+#' \code{tolower} since only lower case characters are cleaned.
 anforandetext_clean_symbols <- function(anforandetext){
 
   # Write out symbols
