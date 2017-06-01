@@ -24,12 +24,14 @@ The documentation of the files can be found [here](https://github.com/MansMeg/rc
 
 3. Tokenize corpus
 Source the `tokenize_speeches` function:
+
 ```
 source("https://raw.githubusercontent.com/MansMeg/rcrpsriksdag/master/RPackage/R/tokenize_speeches.R")
 ```
+
 Download and load the stop word dataset `stop_word_se` [here](https://github.com/MansMeg/rcrpsriksdag/tree/master/RPackage/data) and the cleaned corpus `speeches` [here](https://github.com/MansMeg/rcrpsriksdag/tree/master/RPackage/data).
 
-The tokenize the corpus as follows (you may need to install the `dplyr`, `tidytext` and `checkmate` R packages)
+Tokenize the corpus as follows (you may need to install the `dplyr`, `tidytext` and `checkmate` R packages)
 ```
 speeches_tokens <- 
   tokenize_speeches(speeches, rare_word_limit = 10, stop_words_se)
