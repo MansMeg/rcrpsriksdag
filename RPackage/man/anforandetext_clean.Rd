@@ -36,5 +36,9 @@ anforandetext_mark_sentances(anforandetext)
 \description{
 These functions contain all preprocessing of corpus text.
 }
+\details{
+\code{anforandetext_clean_symbols} needs to be called after 
+\code{tolower} since only lower case characters are cleaned.
+}
 \keyword{Internal}
 

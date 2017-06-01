@@ -18,7 +18,6 @@ speeches <- rcrpsriksdag:::speeches_parse_variables(speeches_raw)
 
 # Clean variables
 print(Sys.time())
-# TODO jämför med och utan commit - var skiljer sig slutresultatet och hur?
 speeches$role <- 
   rcrpsriksdag:::create_role(talare = speeches$talare)
 speeches$talare <- 
@@ -44,6 +43,7 @@ attr(speeches, "created_date") <- Sys.time()
 attr(speeches, "created_git_hash") <- rcrpsriksdag:::get_git_sha1()
 
 # save(speeches, file = "tmp_speeches.rdata")
+# load("tmp_speeches.rdata")
 
 print(Sys.time())
 devtools::use_data(speeches, overwrite = TRUE, pkg = "RPackage/")
