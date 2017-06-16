@@ -7,7 +7,7 @@
 tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL)
 }
 \arguments{
-\item{corpus}{a speeches corpus to tokenize.}
+\item{corpus}{a \code{speeches} corpus to tokenize.}
 
 \item{rare_word_limit}{The rare word limit to use (tokens for word types occuring less or equal to the limit is removed).}
 

@@ -8,6 +8,8 @@ anforandetext_replace_collocation(anforandetext, collocation_folder)
 }
 \arguments{
 \item{anforandetext}{a character vector from anforandetext in corpus file}
+
+\item{collocation_folder}{a path to a folder with files with one collocation per row.}
 }
 \description{
 Replace collocations in data-raw collocations
