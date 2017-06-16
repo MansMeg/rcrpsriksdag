@@ -27,6 +27,8 @@ speeches$parti <-
 speeches$debate_type <- 
   rcrpsriksdag:::create_debate_type(avsnittsrubrik = as.character(speeches$avsnittsrubrik),
                                     kammaraktivitet =  as.character(speeches$kammaraktivitet))
+speeches$test_set <- 
+  rcrpsriksdag:::create_test_set(speeches)
 
 # Clean anforandetext
 print(Sys.time())
