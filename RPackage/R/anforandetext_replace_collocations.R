@@ -21,12 +21,16 @@ anforandetext_replace_collocation <- function(anforandetext, collocation_folder)
   }
   
   for(i in seq_along(raw)){
-    from <- raw[[i]]
-    to <- stringr::str_replace_all(from, " ", "_")
+    from <- paste0("(^| )", raw[[i]], "($| )")
+    to <- paste0(" ", stringr::str_replace_all(raw[[i]], " ", "_"), " ")
     for(j in seq_along(to)){
       anforandetext <- stringr::str_replace_all(anforandetext, from[j], to[j])
     }
   }
+
+  # Trim 
+  anforandetext <- stringr::str_trim(anforandetext)
+  anforandetext <- stringr::str_replace_all(anforandetext, "( )+", " ")
   
   anforandetext
 }
