@@ -3,9 +3,10 @@
 #' @param parti a character vector from anforandetext in corpus file
 #'
 #' @keywords Internal
-parti_clean <- function(parti, talare){
+parti_clean <- function(parti, talare, party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv"){
   checkmate::assert_factor(parti)
   checkmate::assert_factor(talare)
+  checkmate::assert_file_exists(party_errors_file)
   
   parti <- as.character(parti)
   talare <- as.character(talare)
@@ -24,10 +25,24 @@ parti_clean <- function(parti, talare){
   talare_parti[talare_parti=="fp"] <- "l"
   talare_parti[talare_parti=="-"] <- "null"
   
-  diff_idx <- which(talare_parti!=parti)
-  warning(length(diff_idx), " differences in party between variable 'talare' and 'parti'.")
-  # x <- dplyr::data_frame(parti = parti[diff_idx], talare_parti = talare_parti[diff_idx], talare = talare[diff_idx])
-  parti[diff_idx] <- talare_parti[diff_idx]
+  party_errors <- read.csv(party_errors_file, stringsAsFactors = FALSE)
+  for(i in 1:nrow(party_errors)){
+    idx <- which(party_errors$wrong_parti[i] == parti & party_errors$talare[i] == talare)
+    if(length(idx) > 0) parti[idx] <- party_errors$true_parti[i]
+  }
+  
+  diff_idx <- which(talare_parti != parti)
+  if(length(diff_idx) > 0){
+    warning(length(diff_idx), " differences in party between variable 'talare' and 'parti'.")
+  }
+    
+  # x <- dplyr::data_frame(parti = parti[diff_idx], talare_parti = talare_parti[diff_idx], talare = talare[diff_idx], parti_freq = 0, talare_parti_freq = 0)
+  # for(i in 1:nrow(x)){
+  #  tab <- table(parti[talare == x$talare[i]])
+  #  x$parti_freq[i] <- tab[x$parti[i]]
+  #  x$talare_parti_freq[i] <- tab[x$talare_parti[i]]
+  #}
+  # parti[diff_idx] <- talare_parti[diff_idx]
   
   parti <- as.factor(parti)
   parti
