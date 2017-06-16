@@ -2,7 +2,7 @@
 #'
 #' Tokenize and remove stopwords and rare words from the \code{speeches} corpus.
 #' 
-#' @param corpus a speeches corpus to tokenize.
+#' @param corpus a \code{speeches} corpus to tokenize.
 #' @param rare_word_limit The rare word limit to use (tokens for word types occuring less or equal to the limit is removed).
 #' @param stop_list a character vector
 #' 
