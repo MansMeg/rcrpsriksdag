@@ -3,6 +3,8 @@
 #' Replace collocations in data-raw collocations
 #' 
 #' @param anforandetext a character vector from anforandetext in corpus file
+#' @param collocation_folder a path to a folder with files with one collocation per row.
+#' 
 #' @examples 
 #' collocation_folder <- "RPackage/data-raw/collocations/"
 #' anforandetext_replace_collocation(txt, collocation_folder)
@@ -12,13 +14,7 @@ anforandetext_replace_collocation <- function(anforandetext, collocation_folder)
   checkmate::assert_character(anforandetext)
   checkmate::assert_directory_exists(collocation_folder)
 
-  collocation_files <- dir(collocation_folder, full.names = TRUE)
-
-  raw <- list()
-  for(i in seq_along(collocation_files)){
-    raw[[i]] <- readLines(collocation_files[i])
-    checkmate::assert_character(raw[[i]], min.chars = 3, pattern = " ")
-  }
+  raw <- read_in_collocation_files(collocation_folder)
   
   for(i in seq_along(raw)){
     from <- paste0("(^| )", raw[[i]], "($| )")
@@ -34,3 +30,24 @@ anforandetext_replace_collocation <- function(anforandetext, collocation_folder)
   
   anforandetext
 }
+
+
+
+#' Read in the files in collocation folders
+#' 
+#' @param collocation_folder a path to a folder with files with one collocation per row.
+#' 
+#' @keywords Internal
+read_in_collocation_files <- function(collocation_folder){
+  checkmate::assert_directory_exists(collocation_folder)
+  
+  collocation_files <- dir(collocation_folder, full.names = TRUE)
+  
+  raw <- list()
+  for(i in seq_along(collocation_files)){
+    raw[[i]] <- readLines(collocation_files[i])
+    checkmate::assert_character(raw[[i]], min.chars = 3, pattern = " ")
+  }
+  raw
+}
+
