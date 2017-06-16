@@ -32,10 +32,17 @@ speeches$debate_type <-
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_clean(speeches$anforandetext)
+vocab_size_pre <- compute_vocabulary_size(corpus = speeches)
+
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_replace_collocation(anforandetext = speeches$anforandetext, collocation_folder = "RPackage/data-raw/collocations/")
 print(Sys.time())
+vocab_size_post <- compute_vocabulary_size(speeches)
+no_colloc <- compute_collocation_size(collocation_folder = "RPackage/data-raw/collocations/")
+
+# Check that collocations do not create new word types
+if(vocab_size_post <= vocab_size_pre + no_colloc) warning("New word types created.")
 
 # Remove observations
 speeches <- rcrpsriksdag:::speeches_remove_observations(speeches)
