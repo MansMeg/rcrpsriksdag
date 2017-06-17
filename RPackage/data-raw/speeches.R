@@ -34,17 +34,17 @@ speeches$test_set <-
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_clean(speeches$anforandetext)
-vocab_size_pre <- compute_vocabulary_size(corpus = speeches)
+vocab_size_pre <- rcrpsriksdag:::compute_vocabulary_size(corpus = speeches)
 
 print(Sys.time())
 speeches$anforandetext <- 
   rcrpsriksdag:::anforandetext_replace_collocation(anforandetext = speeches$anforandetext, collocation_folder = "RPackage/data-raw/collocations/")
 print(Sys.time())
-vocab_size_post <- compute_vocabulary_size(speeches)
-no_colloc <- compute_collocation_size(collocation_folder = "RPackage/data-raw/collocations/")
+vocab_size_post <- rcrpsriksdag:::compute_vocabulary_size(speeches)
+no_colloc <- rcrpsriksdag:::compute_collocation_size(collocation_folder = "RPackage/data-raw/collocations/")
 
 # Check that collocations do not create new word types
-if(vocab_size_post <= vocab_size_pre + no_colloc) warning("New word types created.")
+if(vocab_size_post > (vocab_size_pre + no_colloc)) warning("New word types created.")
 
 # Remove observations
 speeches <- rcrpsriksdag:::speeches_remove_observations(speeches)
@@ -53,6 +53,7 @@ attr(speeches, "created_git_hash") <- rcrpsriksdag:::get_git_sha1()
 
 # save(speeches, file = "tmp_speeches.rdata")
 # load("tmp_speeches.rdata")
+# attributes(speeches)
 
 print(Sys.time())
 devtools::use_data(speeches, overwrite = TRUE, pkg = "RPackage/")
