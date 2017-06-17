@@ -4,7 +4,8 @@
 \alias{parti_clean}
 \title{Clean the parti variable in the corpus file}
 \usage{
-parti_clean(parti, talare)
+parti_clean(parti, talare,
+  party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv")
 }
 \arguments{
 \item{parti}{a character vector from anforandetext in corpus file}
