@@ -23,7 +23,11 @@ anforandetext_clean <- function(anforandetext){
   anforandetext <- tolower(anforandetext)
   
   anforandetext <- anforandetext_clean_symbols(anforandetext)
+  anforandetext <- anforandetext_handle_dash(anforandetext)
+  #show_pattern_context(anforandetext, "t_o_m")
+  # OBS! cleaning punctuation should not clean _!!!!
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
+  #show_pattern_context(anforandetext2, "t_o_m")
   anforandetext <- anforandetext_clean_handle_digits(anforandetext)
   
   # Final trimming of space
@@ -37,7 +41,7 @@ anforandetext_clean <- function(anforandetext){
 anforandetext_clean_basic <- function(anforandetext){
   checkmate::assert_character(anforandetext)
   # Remove bindesstreck due to errors
-  anforandetext <- stringr::str_replace_all(anforandetext, "-\n|-\r\n", "")
+  anforandetext <- stringr::str_replace_all(anforandetext, "-\n|-\r\n", "-")
   # Replace \n\r with space
   anforandetext <- stringr::str_replace_all(anforandetext, "\n|\r", " ")
   
@@ -159,6 +163,16 @@ anforandetext_clean_symbols <- function(anforandetext){
 
 
 #' @rdname anforandetext_clean
+anforandetext_handle_dash <- function(anforandetext){
+  checkmate::assert_character(anforandetext)
+  
+  anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "_")
+  anforandetext
+}
+
+
+
+#' @rdname anforandetext_clean
 anforandetext_clean_punctuation <- function(anforandetext){
   checkmate::assert_character(anforandetext)
   
@@ -172,8 +186,8 @@ anforandetext_clean_punctuation <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, "([:alpha:]+)(\\.)(com|dk|nu|se|org|net|fi|no)" , "\\1_\\3")
   
   # Handle other punctuations
-  # anforandetext <- stringr::str_replace_all(anforandetext, "[.?!&,;'/\]", " ")
-  anforandetext <- stringr::str_replace_all(anforandetext, "[:punct:]", " ")
+  # Don't use [:punct:] since that also removes underscore
+  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;']", " ")
   
   anforandetext
 }
