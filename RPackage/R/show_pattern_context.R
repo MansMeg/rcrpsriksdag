@@ -12,7 +12,7 @@ show_pattern_context <- function(txt, pattern, character_window = 30){
   checkmate::assert_integerish(character_window, lower = 0)
   
   sub_idx <- stringr::str_detect(txt, pattern)
-  sub_txt <- speeches$anforandetext[sub_idx] 
+  sub_txt <- txt[sub_idx] 
   pos <- stringr::str_locate_all(sub_txt, pattern)
   n <- length(unlist(pos))/2
   ctx <- character(n)
