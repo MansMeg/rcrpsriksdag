@@ -28,28 +28,28 @@ andre vice talmannen görel thurdin
 andre vice talmannennen
 andreas carlgren
 andreas carlson
-andreas norlén
+andreas norlen
 anette åkesson
-anita brodén
+anita broden
 anita johansson
 anita jönsson
-ann-charlotte hammar johnsson
-ann-christin ahlberg
-ann-christin nykvist
-ann-kristine johansson
-ann-marie fagerström
+ann_charlotte hammar johnsson
+ann_christin ahlberg
+ann_christin nykvist
+ann_kristine johansson
+ann_marie fagerström
 anna hedborg
 anna johansson
 anna kinberg batra
 anna lilliehöök
 anna lindh
-anna-karin hatt
-anna-lena sörenson
+anna_karin hatt
+anna_lena sörenson
 anne ludvigsson
-anne marie brodén
+anne marie broden
 anne wibble
-anne-marie ekström
-anne-marie pålsson
+anne_marie ekström
+anne_marie pålsson
 annelie enochson
 annicka engblom
 annie johansson
@@ -77,8 +77,8 @@ bengt harding olson
 bengt hurtig
 bengt silfverstrand
 bengt westerberg
-bengt-anders johansson
-bengt-ola ryttar
+bengt_anders johansson
+bengt_ola ryttar
 berit adolfsson
 berit andnor
 berit högman
@@ -96,7 +96,7 @@ birgitta ahlqvist
 birgitta carlsson
 birgitta hambraeus
 birgitta ohlsson
-birgitta sellén
+birgitta sellen
 birgitta wistrand
 björn hamilton
 björn rosengren
@@ -111,8 +111,8 @@ bodil ceballos
 bodil francke ohlsson
 boriana åberg
 bosse ringholm
-britt-marie danestig
-britt-marie danestig- olofsson
+britt_marie danestig
+britt_marie danestig_olofsson
 britta lejon
 börje hörnlund
 börje vestlund
@@ -131,14 +131,14 @@ carl erik hedlund
 carl fredrik graf
 carl g nilsson
 carl tham
-carl-axel johansson
-carl-axel roslund
-carl-erik skårman
-carl-johan wilson
+carl_axel johansson
+carl_axel roslund
+carl_erik skårman
+carl_johan wilson
 caroline szyber
 catarina rönnung
 catharina bråkenhielm
-catharina elmsäter-svärd
+catharina elmsäter_svärd
 catharina hagen
 catherine persson
 cecilia magnusson
@@ -147,7 +147,7 @@ cecilia widegren
 cecilia wigström
 cecilia wigström i göteborg
 cecilia wikström
-cecilie tenfjord-toftby
+cecilie tenfjord_toftby
 charlotta l bjälkebring
 chatrine pålsson
 chatrine pålsson ahlgren
@@ -163,15 +163,15 @@ christin hagberg
 christina axelsson
 christina höj larsen
 claes västerteg
-claes-göran brandin
+claes_göran brandin
 conny öhman
 cristina husmark pehrsson
 dan ericsson
 dan kihlström
 david lång
-désirée liljevall
-désirée pethrus
-désirée pethrus engström
+desiree liljevall
+desiree pethrus
+desiree pethrus engström
 edward riedl
 egon frid
 elina linna
@@ -180,7 +180,7 @@ elisabeth fleetwood
 elisabeth svantesson
 elisebeht markström
 eliza roszkowska öberg
-else-marie lindgren
+else_marie lindgren
 elver jonsson
 elving andersson
 emil källström
@@ -204,10 +204,10 @@ eva johansson
 eva johnsson
 eva olofsson
 eva zetterberg
-eva-lena jansson
+eva_lena jansson
 ewa björling
 ewa larsson
-ewa thalén finné
+ewa thalen finne
 fanny rizell
 finn bengtsson
 fredrick federley
@@ -228,9 +228,9 @@ gunilla carlsson i hisings backa
 gunilla carlsson i tyresö
 gunilla svantorp
 gunilla tjernberg
-gunilla wahlén
-gunnar andrén
-gunnar axén
+gunilla wahlen
+gunnar andren
+gunnar axen
 gunnar goude
 gunnar hökmark
 gunnar nordmark
@@ -266,7 +266,7 @@ hans stenberg
 hans wallmark
 harald bergström
 harald nordlund
-helén pettersson i umeå
+helen pettersson i umeå
 helena bargholtz
 helena bouveng
 helena hillar rosenqvist
@@ -294,12 +294,12 @@ inge carlsson
 ingegerd saarinen
 ingegerd wärnersson
 ingela nylund watz
-ingela thalén
+ingela thalen
 ingemar josefsson
 ingemar vänerlöv
 inger davidson
 inger lundberg
-inger rené
+inger rene
 inger segelström
 inger strömbom
 ingrid burman
@@ -327,8 +327,8 @@ jan jennehag
 jan lindholm
 jan o karlsson
 jan r andersson
-jan-evert rådhström
-jan-olof larsson
+jan_evert rådhström
+jan_olof larsson
 jarl lander
 jasenko omanovic
 jennie nilsson
@@ -372,9 +372,9 @@ karin svensson smith
 karin åström
 karl erik olsson
 karl gustav abramsson
-karl-erik persson
-karl-göran biörsmark
-karl-gösta svenson
+karl_erik persson
+karl_göran biörsmark
+karl_gösta svenson
 katarina brännström
 katarina köhler
 kenneth g forslund
@@ -392,13 +392,13 @@ kerstin heinemann
 kerstin kristiansson karlstedt
 kerstin lundgren
 kerstin warnerbring
-kerstin-maria stalin
+kerstin_maria stalin
 kew nordqvist
 kia andreasson
 kjell eldensjö
 kjell ericsson
 kjell larsson
-kjell-erik karlsson
+kjell_erik karlsson
 krister hammarbergh
 krister örnfjäder
 kristina zakrisson
@@ -413,13 +413,13 @@ lars elinderson
 lars engqvist
 lars gustafsson
 lars hedfors
-lars hjertén
+lars hjerten
 lars hjälmered
 lars johansson
 lars leijonborg
 lars lilja
 lars lindblad
-lars lindén
+lars linden
 lars mejern larsson
 lars ohly
 lars stjernkvist
@@ -428,10 +428,10 @@ lars tysklind
 lars u granberg
 lars wegendal
 lars ångström
-lars-arne staxäng
-lars-axel nordell
-lars-erik lövdén
-lars-ivar ericson
+lars_arne staxäng
+lars_axel nordell
+lars_erik lövden
+lars_ivar ericson
 leif björnlod
 leif blomberg
 leif carlson
@@ -442,7 +442,9 @@ lena adelsohn liljeroth
 lena asplund
 lena ek
 lena hallengren
-lena hjelm- wallén
+lena hjelm_ wallen
+lena hjelm_wallen
+lena hjelm wallen
 lena klevenås
 lena olsson
 lena sommestad
@@ -450,9 +452,9 @@ leni björklund
 lennart axelsson
 lennart beijer
 lennart brunander
-lennart daléus
+lennart daleus
 lennart fremling
-lennart fridén
+lennart friden
 lennart gustavsson
 lennart hedquist
 lennart klockare
@@ -460,11 +462,12 @@ lennart kollmats
 lennart nilsson
 lennart pettersson
 lennart rohdin
-lennart sacrédeus
+lennart sacredeus
 lennart värmby
 lilian virgin
-linnéa darell
-lisbeth staaf-igelström
+linnea darell
+lisbeth staaf_igelström
+lisbeth staaf igelström
 lise nordin
 liselott hagberg
 liselotte olsson
@@ -478,8 +481,8 @@ magda ayoub
 magdalena andersson
 magdalena streijffert
 maggi mikaelsson
-maj-inger klingvall
-majléne westerlund panke
+maj_inger klingvall
+majlene westerlund panke
 malin löfsjögård
 margareta andersson
 margareta b kjellin
@@ -498,7 +501,8 @@ maria arnholm
 maria ferm
 maria kornevik jakobsson
 maria larsson
-maria lundqvist-brömster
+maria lundqvist_brömster
+maria lundqvist brömster
 maria plass
 maria stenberg
 maria stockhaus
@@ -510,10 +514,11 @@ marianne jönsson
 marianne samuelsson
 marie engström
 marie granlund
-marie nordén
+marie norden
 marie wahlgren
-marietta de pourbaix- lundin
-marietta de pourbaix-lundin
+marietta de pourbaix_ lundin
+marietta de pourbaix_lundin
+marietta de pourbaix lundin
 marina pettersson
 marita ulvskog
 markus wiechel
@@ -555,7 +560,7 @@ murad artin
 niklas wykman
 nikos papadopoulos
 nils fredrik aurelius
-nils-erik söderqvist
+nils_erik söderqvist
 nina larsson
 nina lundström
 nyamko sabuni
@@ -583,9 +588,9 @@ per rosengren
 per unckel
 per westerberg
 per åsling
-per-ingvar johnsson
-per-ola eriksson
-per-richard molén
+per_ingvar johnsson
+per_ola eriksson
+per_richard molen
 peter althin
 peter eriksson
 peter hultqvist
@@ -600,7 +605,7 @@ pierre schori
 pyry niemi
 pär axel sahlberg
 pär nuder
-pär-axel sahlberg
+pär_axel sahlberg
 ragnhild pohanka
 ragnwi marcelind
 raimo pärssinen
@@ -621,7 +626,7 @@ rolf olsson
 rolf åbjörnsson
 ronny korsberg
 ronny olander
-rose-marie frebran
+rose_marie frebran
 rosita runegrund
 rossana dinamarca
 roy hansson
@@ -634,7 +639,8 @@ sinikka bohlin
 siv holma
 sivert carlsson
 siw persson
-siw wittgren-ahl
+siw wittgren_ahl
+siw wittgren ahl
 sofia arkelsten
 sofia jonsson
 sofia larsen
@@ -658,10 +664,10 @@ sven bergström
 sven brus
 sven gunnar persson
 sven otto littorin
-sven-erik bucht
-sven-erik sjöstrand
-sven-erik österberg
-sven-olof sällström
+sven_erik bucht
+sven_erik sjöstrand
+sven_erik österberg
+sven_olof sällström
 sylvia lindgren
 sören lekberg
 tanja linderborg
@@ -679,7 +685,7 @@ tobias krantz
 tom heyman
 tomas eneroth
 tomas högström
-tomas tobé
+tomas tobe
 tommy waidelich
 tone tingsgård
 torbjörn björlund
@@ -700,7 +706,7 @@ ulla andersson
 ulla hoffmann
 ulla löfgren
 ulla wester
-ulla-britt hagström
+ulla_britt hagström
 ulrica messing
 ulrik lindgren
 ulrik nilsson
@@ -712,7 +718,7 @@ veronica palm
 viola furubjelke
 viviann gerdin
 willy söderdahl
-wiwi-anne johansson
+wiwi_anne johansson
 yilmaz kerimo
 ylva johansson
 yvonne andersson
@@ -725,6 +731,6 @@ yvonne ångström
 åsa coenraads
 åsa domeij
 åsa lindestam
-åsa regnér
+åsa regner
 åsa romson
 åsa torstensson
