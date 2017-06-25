@@ -4,7 +4,8 @@
 \alias{tokenize_speeches}
 \title{Tokenize the corpus}
 \usage{
-tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL)
+tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL,
+  split_pattern = " ")
 }
 \arguments{
 \item{corpus}{a \code{speeches} corpus to tokenize.}
