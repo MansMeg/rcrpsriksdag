@@ -166,7 +166,11 @@ anforandetext_clean_symbols <- function(anforandetext){
 anforandetext_handle_dash <- function(anforandetext){
   checkmate::assert_character(anforandetext)
   
-  anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "_")
+  anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "-")
+  anforandetext <- stringr::str_replace_all(anforandetext, "-+", "-")
+  
+  # See detailed handling of the different dashes in the dash_xxx.csv files
+  
   anforandetext
 }
 
@@ -187,7 +191,7 @@ anforandetext_clean_punctuation <- function(anforandetext){
   
   # Handle other punctuations
   # Don't use [:punct:] since that also removes underscore
-  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;']", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;:'\"]", " ")
   
   anforandetext
 }
