@@ -9,13 +9,11 @@ anforandetext_clean <- function(anforandetext){
   checkmate::assert_character(anforandetext)
   # anforandetext <- speeches_raw$anforandetext
   
-  anforandetext <- anforandetext_clean_basic(anforandetext)
+  anforandetext <- anforandetext_clean_formating(anforandetext)
   anforandetext <- anforandetext_clean_correct_errors(anforandetext)
+  anforandetext <- anforandetext_clean_remove_comments(anforandetext)
   anforandetext <- anforandetext_clean_remove_greetings(anforandetext)
 
-  # Remove paranthesis
-  anforandetext <- stringr::str_replace_all(anforandetext, "\\(.*\\)", " ") 
-  
   anforandetext <- anforandetext_handle_abbreviations(anforandetext)
 
   # anforandetext <- anforandetext_mark_sentances(anforandetext)
@@ -23,9 +21,8 @@ anforandetext_clean <- function(anforandetext){
   anforandetext <- tolower(anforandetext)
   
   anforandetext <- anforandetext_clean_symbols(anforandetext)
-  anforandetext <- anforandetext_handle_dash(anforandetext)
   #show_pattern_context(anforandetext, "t_o_m")
-  # OBS! cleaning punctuation should not clean _!!!!
+  # OBS! Cleaning punctuation should not clean _ or - !!!!
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
   #show_pattern_context(anforandetext2, "t_o_m")
   anforandetext <- anforandetext_clean_handle_digits(anforandetext)
@@ -38,7 +35,7 @@ anforandetext_clean <- function(anforandetext){
 }
 
 #' @rdname anforandetext_clean
-anforandetext_clean_basic <- function(anforandetext){
+anforandetext_clean_formating <- function(anforandetext){
   checkmate::assert_character(anforandetext)
   # Remove bindesstreck due to errors
   anforandetext <- stringr::str_replace_all(anforandetext, "-\n|-\r\n", "-")
@@ -101,6 +98,7 @@ anforandetext_clean_correct_errors <- function(anforandetext){
 
 #' @rdname anforandetext_clean
 anforandetext_clean_remove_greetings <- function(anforandetext){
+  checkmate::assert_character(anforandetext)
   
   greet0 <- "^( )*?([Hh]err|[Ff]ru)( )*?(talman|ålderspresident).*?(!|\\.|\\?)"
   check_greet0 <- stringr::str_extract(anforandetext, greet0)
@@ -124,6 +122,18 @@ anforandetext_clean_remove_greetings <- function(anforandetext){
   
   anforandetext
 }
+
+
+#' @rdname anforandetext_clean
+anforandetext_clean_remove_comments <- function(anforandetext){
+  checkmate::assert_character(anforandetext)
+  
+  anforandetext <- stringr::str_replace_all(anforandetext, "[(][Aa]pplåder[)]", " ")
+  
+  anforandetext
+}
+
+
 
 #' @rdname anforandetext_clean
 anforandetext_clean_handle_digits <- function(anforandetext){
@@ -162,19 +172,6 @@ anforandetext_clean_symbols <- function(anforandetext){
 }
 
 
-#' @rdname anforandetext_clean
-anforandetext_handle_dash <- function(anforandetext){
-  checkmate::assert_character(anforandetext)
-  
-  anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "-")
-  anforandetext <- stringr::str_replace_all(anforandetext, "-+", "-")
-  
-  # See detailed handling of the different dashes in the dash_xxx.csv files
-  
-  anforandetext
-}
-
-
 
 #' @rdname anforandetext_clean
 anforandetext_clean_punctuation <- function(anforandetext){
@@ -189,9 +186,13 @@ anforandetext_clean_punctuation <- function(anforandetext){
   # Handle . in web adresses
   anforandetext <- stringr::str_replace_all(anforandetext, "([:alpha:]+)(\\.)(com|dk|nu|se|org|net|fi|no)" , "\\1_\\3")
   
+  # Clean up dashes (don't remove them)
+  anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "-")
+  anforandetext <- stringr::str_replace_all(anforandetext, "-+", "-")
+  
   # Handle other punctuations
   # Don't use [:punct:] since that also removes underscore
-  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;:'\"]", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;:'\")(]", " ")
   
   anforandetext
 }
