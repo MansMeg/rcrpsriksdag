@@ -22,7 +22,7 @@ anforandetext_clean <- function(anforandetext){
   
   anforandetext <- anforandetext_clean_symbols(anforandetext)
   #show_pattern_context(anforandetext, "t_o_m")
-  # OBS! Cleaning punctuation should not clean _ or - !!!!
+  # OBS! Cleaning punctuation should not clean "_" (from abbreviations) or "-" !!!!
   anforandetext <- anforandetext_clean_punctuation(anforandetext)
   #show_pattern_context(anforandetext2, "t_o_m")
   anforandetext <- anforandetext_clean_handle_digits(anforandetext)
@@ -189,6 +189,9 @@ anforandetext_clean_punctuation <- function(anforandetext){
   # Clean up dashes (don't remove them)
   anforandetext <- stringr::str_replace_all(anforandetext, "‒|–|—|―|-|-", "-")
   anforandetext <- stringr::str_replace_all(anforandetext, "-+", "-")
+  
+  # Clean up single underscores (OBS! underscores are used for abbreviations)
+  anforandetext <- stringr::str_replace_all(anforandetext, " _ ", " ")
   
   # Handle other punctuations
   # Don't use [:punct:] since that also removes underscore
