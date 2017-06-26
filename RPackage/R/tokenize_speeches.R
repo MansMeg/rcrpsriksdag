@@ -1,6 +1,6 @@
 #' Tokenize the corpus
 #'
-#' Tokenize and remove stopwords and rare words from the \code{speeches} corpus.
+#' Tokenize and remove stopwords and rare words from the \code{speeches} corpus. It tokenizes based solely on one space.
 #' 
 #' @param corpus a \code{speeches} corpus to tokenize.
 #' @param rare_word_limit The rare word limit to use (tokens for word types occuring less or equal to the limit is removed).
@@ -20,7 +20,7 @@ tokenize_speeches <- function(corpus, rare_word_limit = 10, stop_list = NULL){
     
   # Create one-token-per-row object
   txt <- dplyr::data_frame(anforande_id = as.factor(corpus$anforande_id), txt = corpus$anforandetext)
-  txt <- tidytext::unnest_tokens(txt, word, txt)
+  txt <- tidytext::unnest_tokens(txt, word, txt, token = stringr::str_split, pattern = " ", to_lower = FALSE)
   tkns <- nrow(txt)
   message(tkns, " tokens in data.")
   
