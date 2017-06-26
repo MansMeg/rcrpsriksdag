@@ -16,7 +16,7 @@ Replace token errors in anforandetext
 }
 \examples{
 token_errors_folder <- "RPackage/data-raw/dash_errors"
-anforandetext <- speeches$anforandetext
+token_errors_folder <- "RPackage/data-raw/token_errors/"
 anforandetext_replace_collocation(txt, token_errors_folder)
 
 }
