@@ -2,10 +2,11 @@
 % Please edit documentation in R/anforandetext_clean.R
 \name{anforandetext_clean}
 \alias{anforandetext_clean}
-\alias{anforandetext_clean_basic}
 \alias{anforandetext_clean_correct_errors}
+\alias{anforandetext_clean_formating}
 \alias{anforandetext_clean_handle_digits}
 \alias{anforandetext_clean_punctuation}
+\alias{anforandetext_clean_remove_comments}
 \alias{anforandetext_clean_remove_greetings}
 \alias{anforandetext_clean_symbols}
 \alias{anforandetext_handle_abbreviations}
@@ -14,11 +15,13 @@
 \usage{
 anforandetext_clean(anforandetext)
 
-anforandetext_clean_basic(anforandetext)
+anforandetext_clean_formating(anforandetext)
 
 anforandetext_clean_correct_errors(anforandetext)
 
 anforandetext_clean_remove_greetings(anforandetext)
+
+anforandetext_clean_remove_comments(anforandetext)
 
 anforandetext_clean_handle_digits(anforandetext)
 

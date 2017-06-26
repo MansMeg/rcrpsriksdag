@@ -4,8 +4,7 @@
 \alias{tokenize_speeches}
 \title{Tokenize the corpus}
 \usage{
-tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL,
-  split_pattern = " ")
+tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL)
 }
 \arguments{
 \item{corpus}{a \code{speeches} corpus to tokenize.}
@@ -15,7 +14,7 @@ tokenize_speeches(corpus, rare_word_limit = 10, stop_list = NULL,
 \item{stop_list}{a character vector}
 }
 \description{
-Tokenize and remove stopwords and rare words from the \code{speeches} corpus.
+Tokenize and remove stopwords and rare words from the \code{speeches} corpus. It tokenizes based solely on one space.
 }
 \examples{
 data("stop_words_se")
