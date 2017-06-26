@@ -7,7 +7,7 @@
 anforandetext_replace_dash_tokens(speeches)
 }
 \arguments{
-\item{anforandetext}{a character vector from anforandetext in corpus file}
+\item{speeches}{a speeches corpus object}
 }
 \description{
 Replace dashed tokens in anforandetext

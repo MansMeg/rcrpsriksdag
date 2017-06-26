@@ -192,7 +192,13 @@ anforandetext_clean_punctuation <- function(anforandetext){
   
   # Handle other punctuations
   # Don't use [:punct:] since that also removes underscore
-  anforandetext <- stringr::str_replace_all(anforandetext, "[\\.?!&,;:'\")(]", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "[?!&,;:'\")(/@]", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "·", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\.", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\*", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\]", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\[", " ")
+  anforandetext <- stringr::str_replace_all(anforandetext, "\\\\", " ")
   
   anforandetext
 }

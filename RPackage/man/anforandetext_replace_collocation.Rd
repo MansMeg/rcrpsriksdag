@@ -16,6 +16,7 @@ Replace collocations in data-raw collocations
 }
 \examples{
 collocation_folder <- "RPackage/data-raw/collocations/"
+txt <- speeches$anforandetext
 anforandetext_replace_collocation(txt, collocation_folder)
 
 }
