@@ -225,6 +225,9 @@ anforandetext_handle_abbreviations <- function(anforandetext){
   anforandetext <- stringr::str_replace_all(anforandetext, " e\\.d", " e_d")
   anforandetext <- stringr::str_replace_all(anforandetext, " kl\\.", " kl ")    
   
+  # anforandetext <- "S.k s.k. s.k S.ka, :s.k"
+  # stringr::str_replace_all(anforandetext, "(^| )([Ss])(\\.)(k)([^a-ö])", " s_k\\5")
+  
   anforandetext <- stringr::str_replace_all(anforandetext, " T\\.ex", " T_ex")    
   anforandetext <- stringr::str_replace_all(anforandetext, " Bl\\.a", " Bl_a")
   anforandetext <- stringr::str_replace_all(anforandetext, " M\\.m", " M_m")
