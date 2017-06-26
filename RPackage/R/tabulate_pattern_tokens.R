@@ -15,7 +15,7 @@ tabulate_pattern_tokens <- function(txt, pattern){
   results <- unlist(stringr::str_extract_all(sub_txt, pattern))
   results <- stringr::str_trim(results)
   results <- dplyr::data_frame(token = results)
-  results <- count(results, token)
+  results <- dplyr::count(results, token)
   results <- arrange(results, desc(n))
   results
 }
