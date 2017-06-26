@@ -29,6 +29,8 @@ speeches$debate_type <-
                                     kammaraktivitet =  as.character(speeches$kammaraktivitet))
 speeches$test_set <- 
   rcrpsriksdag:::create_test_set(speeches)
+speeches <- 
+  rcrpsriksdag:::create_debate_ids(speeches)
 
 # Clean anforandetext
 print(Sys.time())
