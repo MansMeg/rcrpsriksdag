@@ -38,12 +38,12 @@ vocab_size_pre <- rcrpsriksdag:::compute_vocabulary_size(corpus = speeches)
 
 print(Sys.time())
 checkmate::assert(any(stringr::str_detect(speeches$anforandetext, "-")))
-speeches$anforandetext <- 
-  rcrpsriksdag:::anforandetext_replace_dash_tokens(anforandetext = speeches$anforandetext)
+speeches <- 
+  rcrpsriksdag:::anforandetext_replace_dash_tokens(speeches = speeches)
 
 print(Sys.time())
-speeches$anforandetext <- 
-  rcrpsriksdag:::anforandetext_replace_token_errors(anforandetext = speeches$anforandetext, token_errors_folder = "RPackage/data-raw/token_errors/")
+speeches <- 
+  rcrpsriksdag:::anforandetext_replace_token_errors(speeches, token_errors_folder = "RPackage/data-raw/token_errors/")
 
 print(Sys.time())
 speeches$anforandetext <- 

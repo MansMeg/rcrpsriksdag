@@ -6,14 +6,14 @@
 #' 1) New lines that cuts words and 
 #' 2) Combined words
 #' 
-#' @param anforandetext a character vector from anforandetext in corpus file
+#' @param speeches a speeches corpus object
 #' 
 #' @keywords Internal
 anforandetext_replace_dash_tokens <- function(speeches){
   checkmate::assert_class(speeches, "tbl_df")
 
   # Replace known errors
-  anforandetext <- anforandetext_replace_token_errors(speeches, "RPackage/data-raw/dash_errors/")
+  speeches <- anforandetext_replace_token_errors(speeches, "RPackage/data-raw/dash_errors/")
 
   # Combine the rest of the dash separations
   speeches$anforandetext <- stringr::str_replace_all(speeches$anforandetext, "-", "")

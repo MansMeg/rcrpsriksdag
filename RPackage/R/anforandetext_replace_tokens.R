@@ -49,10 +49,10 @@ anforandetext_replace_token_errors <- function(speeches, token_errors_folder){
   # idx <- which(txt1 != txt2)
 
   # Trim 
-  anforandetext <- stringr::str_trim(anforandetext)
-  anforandetext <- stringr::str_replace_all(anforandetext, "( )+", " ")
+  speeches$anforandetext <- stringr::str_trim(speeches$anforandetext)
+  speeches$anforandetext <- stringr::str_replace_all(speeches$anforandetext, "( )+", " ")
   
-  anforandetext
+  speeches
 }
 
 #' Read in the files in collocation folders
