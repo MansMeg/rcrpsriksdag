@@ -13,7 +13,7 @@ anforandetext_replace_dash_tokens <- function(speeches){
   checkmate::assert_class(speeches, "tbl_df")
 
   # Replace known errors
-  speeches <- anforandetext_replace_token_errors(speeches, "RPackage/data-raw/dash_errors/")
+  speeches <- anforandetext_replace_token_errors(speeches, token_errors_folder = "RPackage/data-raw/dash_errors/")
 
   # Combine the rest of the dash separations
   speeches$anforandetext <- stringr::str_replace_all(speeches$anforandetext, "-", "")

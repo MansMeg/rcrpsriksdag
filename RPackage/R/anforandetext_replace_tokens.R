@@ -5,7 +5,7 @@
 #' 
 #' @examples 
 #' token_errors_folder <- "RPackage/data-raw/dash_errors"
-#' anforandetext <- speeches$anforandetext
+#' token_errors_folder <- "RPackage/data-raw/token_errors/"
 #' anforandetext_replace_collocation(txt, token_errors_folder)
 #' 
 #' @keywords Internal
@@ -19,7 +19,7 @@ anforandetext_replace_token_errors <- function(speeches, token_errors_folder){
   # Tokenize corpus
   tok_speeches <- suppressMessages(rcrpsriksdag::tokenize_speeches(speeches, 0))
   tok_speeches <- dplyr::mutate(tok_speeches, token = as.character(token))
-
+  
   # Match with left_join
   tok_speeches <- dplyr::left_join(tok_speeches, errored_tokens, by = c("token" = "wrong_token"))
   
@@ -40,13 +40,15 @@ anforandetext_replace_token_errors <- function(speeches, token_errors_folder){
   speeches$no <- 1:nrow(speeches)
   speeches <- dplyr::left_join(speeches, res, by = "anforande_id")
   speeches <- dplyr::arrange(speeches, no)
-  speeches$anforandetext <- speeches$anforandetext_new
   speeches$no <- NULL
-  
+
   # Bugg check
   # txt1 <- stringr::str_replace_all(speeches$anforandetext, "-|_", " ")
   # txt2 <- stringr::str_replace_all(speeches$anforandetext_new, "-|_", " ")
   # idx <- which(txt1 != txt2)
+  
+  speeches$anforandetext <- speeches$anforandetext_new
+  speeches$anforandetext_new <- NULL
 
   # Trim 
   speeches$anforandetext <- stringr::str_trim(speeches$anforandetext)
