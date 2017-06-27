@@ -39,10 +39,8 @@ test_that("All collocation files has been handled", {
   expect_true(any(stringr::str_detect(txt, "skylla_sig_själv"))) # collocations_3gram.txt
   expect_true(any(stringr::str_detect(txt, "m_s"))) # collocations_manual.txt
   expect_true(any(stringr::str_detect(txt, "ali_esbati"))) # collocations_mep.txt
-  expect_true(any(stringr::str_detect(txt, "västra_götalands_län"))) # collocations_region_names.txt
   expect_true(any(stringr::str_detect(txt, "hbt_personers"))) # dash_collocations.csv
 })
-
 
 test_that("No missing speeches", {
   txt <- speeches$anforandetext

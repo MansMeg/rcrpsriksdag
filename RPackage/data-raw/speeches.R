@@ -65,10 +65,6 @@ speeches <- rcrpsriksdag:::speeches_remove_observations(speeches)
 attr(speeches, "created_date") <- Sys.time() 
 attr(speeches, "created_git_hash") <- rcrpsriksdag:::get_git_sha1()
 
-# save(speeches, file = "tmp_speeches.rdata")
-# load("tmp_speeches.rdata")
-# attributes(speeches)
-
 print(Sys.time())
 devtools::use_data(speeches, overwrite = TRUE, pkg = "RPackage/")
 print(Sys.time())
