@@ -2,6 +2,7 @@
 context("speeches")
 
 data("speeches")
+data("stop_words_se")
 # load("speeches3.rda")
 tok_speeches <- rcrpsriksdag::tokenize_speeches(speeches, 0)
 
@@ -60,8 +61,18 @@ test_that("The tokenization function is correct", {
   # idx <- which(txt1 != txt2)
   # txt1[idx[i]]
   # txt2[idx[i]]
+  
+  # Stop words are removed
+  tok_speeches_no_stops <- 
+    rcrpsriksdag::tokenize_speeches(speeches, 0, stop_list = stop_words_se)
+  expect_false(any(as.character(tok_speeches_no_stops$type) == "också"))
 })
 
+test_that("Stop words with åäö is removed", {
+  tok_speeches_no_stops <- 
+    rcrpsriksdag::tokenize_speeches(speeches, 0, stop_list = stop_words_se)
+  expect_false(any(as.character(tok_speeches_no_stops$type) == "också"))
+})
 
 test_that("Check that only colocation in collocation files and dashed exist", {
   # "a jour" should not create "ska_journalist"
