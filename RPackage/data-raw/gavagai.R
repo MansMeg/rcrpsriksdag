@@ -27,5 +27,7 @@ for(i in seq_along(batches)){
   if(!file.exists(fp)){
     gavagai_batch <- gavagair::tonality(anforandetext[batches[[i]]], api_key, language = "sv")
     save(gavagai_batch, file = fp)
+  } else {
+    cat("Skipped:", fn)
   }
 }
