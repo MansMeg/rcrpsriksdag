@@ -15,4 +15,3 @@ tabulate_pattern_tokens(txt, pattern)
 Tablulate tokens identified by pattern
 }
 \keyword{Internal}
-

@@ -2,13 +2,13 @@
 % Please edit documentation in R/anforandetext_clean.R
 \name{anforandetext_clean}
 \alias{anforandetext_clean}
-\alias{anforandetext_clean_correct_errors}
 \alias{anforandetext_clean_formating}
-\alias{anforandetext_clean_handle_digits}
-\alias{anforandetext_clean_punctuation}
-\alias{anforandetext_clean_remove_comments}
+\alias{anforandetext_clean_correct_errors}
 \alias{anforandetext_clean_remove_greetings}
+\alias{anforandetext_clean_remove_comments}
+\alias{anforandetext_clean_handle_digits}
 \alias{anforandetext_clean_symbols}
+\alias{anforandetext_clean_punctuation}
 \alias{anforandetext_handle_abbreviations}
 \alias{anforandetext_mark_sentances}
 \title{Clean the anforandetext in the corpus file}
@@ -44,4 +44,3 @@ These functions contain all preprocessing of corpus text.
 \code{tolower} since only lower case characters are cleaned.
 }
 \keyword{Internal}
-

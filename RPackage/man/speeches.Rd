@@ -4,17 +4,16 @@
 \name{speeches}
 \alias{speeches}
 \title{Debates in the Swedish parliament (cleaned corpus)}
-\format{A \code{tbl_df} with one row per speech.}
-\usage{
-speeches
-}
+\format{A \code{tbl_df} with one row debate speech.}
 \description{
+Debates in the Swedish parliament (cleaned corpus)
+}
+\details{
 A corpus with one speech per row. 
 This is a cleaned version of \code{speeches_raw}, see  
-RPackage/data-raw/speeches.R on how the data has been cleaned.
+\code{RPackage/data-raw/speeches.R} on how the data has been cleaned.
 }
 \seealso{
 \link{speeches_raw}
 }
-\keyword{datasets}
-
+\keyword{data}

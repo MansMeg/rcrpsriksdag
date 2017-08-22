@@ -22,4 +22,3 @@ data("speeches")
 speeches_tokenized <- tokenize_speeches(speeches, 10, stop_words_se)
 
 }
-

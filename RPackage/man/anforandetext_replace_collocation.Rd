@@ -21,4 +21,3 @@ anforandetext_replace_collocation(txt, collocation_folder)
 
 }
 \keyword{Internal}
-

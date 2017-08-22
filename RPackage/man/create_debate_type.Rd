@@ -15,4 +15,3 @@ create_debate_type(avsnittsrubrik, kammaraktivitet)
 Create debate type
 }
 \keyword{Internal}
-

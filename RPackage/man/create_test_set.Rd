@@ -17,4 +17,3 @@ create_test_set(corpus, seed = 4711, size = 10000)
 Compute a test_set indicator
 }
 \keyword{Internal}
-

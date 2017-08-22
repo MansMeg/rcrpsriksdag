@@ -1,38 +1,49 @@
 #' Debates in the Swedish parliament (raw corpus)
 #'
+#' @details 
 #' Raw data containing debates in the Swedish parliament.
-#'
 #' @format A \code{tbl_df} with one row debate speech.
-#' 
 #' @seealso \link{speeches}
-#' 
-"speeches_raw"
-
+#' @name speeches_raw
+#' @docType data
+#' @keywords data
+NULL
 
 
 #' Debates in the Swedish parliament (cleaned corpus)
 #'
-#' @description 
+#' @details 
 #' A corpus with one speech per row. 
 #' This is a cleaned version of \code{speeches_raw}, see  
-#' RPackage/data-raw/speeches.R on how the data has been cleaned.
-#'
-#' @format A \code{tbl_df} with one row per speech.
+#' \code{RPackage/data-raw/speeches.R} on how the data has been cleaned.
 #' 
+#' @format A \code{tbl_df} with one row debate speech.
 #' @seealso \link{speeches_raw}
-"speeches"
+#' @name speeches
+#' @docType data
+#' @keywords data
+NULL
+
 
 #' Stop word lists
+#'
+#' @details 
+#' A stopword list of common Swedish stop words.
 #' 
-#' @description A stopword list of common Swedish stop words.
-#' 
-"stop_words_se"
+#' @name stop_words_se
+#' @docType data
+#' @keywords data
+NULL
 
 #' Translated vocabulary of the speeches corpus
-#' 
+#'
 #' @description 
 #' This dataset contain translations from Swedish to english for all 
 #' individual tokens in the cleaned dataset. Translation has been done with 
 #' Google Translate.
 #' 
-"vocabulary_translation"
+#' @name vocabulary_translation
+#' @docType data
+#' @keywords data
+NULL
+

@@ -21,4 +21,3 @@ anforandetext_replace_collocation(txt, token_errors_folder)
 
 }
 \keyword{Internal}
-

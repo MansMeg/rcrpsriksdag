@@ -16,4 +16,3 @@ speeches_remove_observations(corpus)
 Parse the variables into correct R format.
 }
 \keyword{Internal}
-

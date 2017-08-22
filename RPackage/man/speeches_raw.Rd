@@ -5,14 +5,13 @@
 \alias{speeches_raw}
 \title{Debates in the Swedish parliament (raw corpus)}
 \format{A \code{tbl_df} with one row debate speech.}
-\usage{
-speeches_raw
-}
 \description{
+Debates in the Swedish parliament (raw corpus)
+}
+\details{
 Raw data containing debates in the Swedish parliament.
 }
 \seealso{
 \link{speeches}
 }
-\keyword{datasets}
-
+\keyword{data}

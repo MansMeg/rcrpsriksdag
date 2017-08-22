@@ -19,4 +19,3 @@ There are two main uses for dashes:
 2) Combined words
 }
 \keyword{Internal}
-

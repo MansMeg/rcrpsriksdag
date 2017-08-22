@@ -21,4 +21,3 @@ corpus <- read_anforande_json_zip(folder)
 
 }
 \keyword{Internal}
-

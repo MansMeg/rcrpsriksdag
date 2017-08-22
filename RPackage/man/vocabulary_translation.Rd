@@ -4,14 +4,9 @@
 \name{vocabulary_translation}
 \alias{vocabulary_translation}
 \title{Translated vocabulary of the speeches corpus}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 90328 rows and 2 columns.}
-\usage{
-vocabulary_translation
-}
 \description{
 This dataset contain translations from Swedish to english for all 
 individual tokens in the cleaned dataset. Translation has been done with 
 Google Translate.
 }
-\keyword{datasets}
-
+\keyword{data}

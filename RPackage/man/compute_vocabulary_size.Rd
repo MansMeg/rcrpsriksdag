@@ -13,4 +13,3 @@ compute_vocabulary_size(corpus)
 Compute the vocabulary size of a corpus
 }
 \keyword{Internal}
-

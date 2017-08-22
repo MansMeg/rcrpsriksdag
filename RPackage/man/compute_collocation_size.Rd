@@ -13,4 +13,3 @@ compute_collocation_size(collocation_folder)
 Compute the vocabulary size of a corpus
 }
 \keyword{Internal}
-

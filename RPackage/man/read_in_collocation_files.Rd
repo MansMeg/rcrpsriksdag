@@ -13,4 +13,3 @@ read_in_collocation_files(collocation_folder)
 Read in the files in collocation folders
 }
 \keyword{Internal}
-

@@ -17,4 +17,3 @@ show_pattern_context(txt, pattern, character_window = 30)
 Show a pattern within a textual context.
 }
 \keyword{Internal}
-

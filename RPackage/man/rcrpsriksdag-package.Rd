@@ -2,10 +2,9 @@
 % Please edit documentation in R/rcrpsriksdag.R
 \docType{package}
 \name{rcrpsriksdag-package}
-\alias{rcrpsriksdag}
 \alias{rcrpsriksdag-package}
+\alias{rcrpsriksdag}
 \title{rcrpsriksdag R package}
 \description{
 An R package that contain corpora from the Swedish parliament (Riksdagen).
 }
-

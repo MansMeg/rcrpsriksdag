@@ -3,17 +3,19 @@
 \docType{data}
 \name{stop_words_se}
 \alias{stop_words_se}
+\alias{stop_words_se}
 \title{Stop word lists}
 \format{An object of class \code{character} of length 116.}
 \usage{
 stop_words_se
-
-stop_words_se
 }
 \description{
-A stopword list of common Swedish stop words.
+Stop word lists
 
 Stop word lists
 }
+\details{
+A stopword list of common Swedish stop words.
+}
+\keyword{data}
 \keyword{datasets}
-

@@ -13,4 +13,3 @@ get_git_sha1(repo = ".")
 Get git hash
 }
 \keyword{Internal}
-

@@ -88,10 +88,10 @@ anforandetext_clean_correct_errors <- function(anforandetext){
   # Exceptional handling
   anforandetext <- stringr::str_replace_all(anforandetext,
                          "Herr talman Tobias Billström har frågat mig vilka initiativ",
-                         "Herr_talman Tobias Billström har frågat mig vilka initiativ")
+                         "Herr talman! Tobias Billström har frågat mig vilka initiativ")
   anforandetext <- stringr::str_replace_all(anforandetext,
                          "Herr talman, barnens arbetsmiljö i förskola, skola och skolbarnsomsorg",
-                         "Herr_talman, barnens arbetsmiljö i förskola, skola och skolbarnsomsorg")
+                         "Herr talman! Barnens arbetsmiljö i förskola, skola och skolbarnsomsorg")
   anforandetext
 }
 
