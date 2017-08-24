@@ -3,3 +3,8 @@
 export(show_pattern_context)
 export(tabulate_pattern_tokens)
 export(tokenize_speeches)
+importFrom(utils,read.csv)
+importFrom(utils,read.csv2)
+importFrom(utils,setTxtProgressBar)
+importFrom(utils,txtProgressBar)
+importFrom(utils,unzip)

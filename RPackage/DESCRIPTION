@@ -9,13 +9,14 @@ Description: An R package with text data from the Swedish parliament
 License: LGP-3
 Depends: 
   R (>= 2.10)
-Suggest:
+Imports:
   checkmate,
   devtools,
   jsonlite,
   stringr,
   tidytext,
   dplyr,
-  git2r
+  git2r,
+  Matrix
 RoxygenNote: 6.0.1
 Suggests: testthat
