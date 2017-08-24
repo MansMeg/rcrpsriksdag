@@ -6,4 +6,5 @@
 #' @docType package
 #' @name rcrpsriksdag-package
 #' @aliases rcrpsriksdag
+#' @importFrom utils read.csv read.csv2 setTxtProgressBar txtProgressBar unzip
 NULL
