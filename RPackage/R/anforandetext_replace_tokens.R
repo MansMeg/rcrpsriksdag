@@ -1,13 +1,14 @@
 #' Replace token errors in anforandetext
 #' 
-#' @param anforandetext a character vector from anforandetext in corpus file
+#' @param speeches a \code{speeches} \code{data_frame}
 #' @param token_errors_folder a path to a folder with files with one collocation per row.
 #' 
 #' @examples 
-#' token_errors_folder <- "RPackage/data-raw/dash_errors"
-#' token_errors_folder <- "RPackage/data-raw/token_errors/"
-#' anforandetext_replace_collocation(txt, token_errors_folder)
-#' 
+#' \dontrun{
+#'   token_errors_folder <- "RPackage/data-raw/dash_errors"
+#'   token_errors_folder <- "RPackage/data-raw/token_errors/"
+#'   anforandetext_replace_collocation(txt, token_errors_folder)
+#' }
 #' @keywords Internal
 anforandetext_replace_token_errors <- function(speeches, token_errors_folder){
   checkmate::assert_class(speeches, "tbl_df")
@@ -59,7 +60,7 @@ anforandetext_replace_token_errors <- function(speeches, token_errors_folder){
 
 #' Read in the files in collocation folders
 #' 
-#' @param collocation_folder a path to a folder with files with one collocation per row.
+#' @param token_errors_folder a path to a folder with error files.
 #' 
 #' @keywords Internal
 read_in_token_error_files <- function(token_errors_folder){

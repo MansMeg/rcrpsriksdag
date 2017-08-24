@@ -6,9 +6,11 @@
 #' @param collocation_folder a path to a folder with files with one collocation per row.
 #' 
 #' @examples 
-#' collocation_folder <- "RPackage/data-raw/collocations/"
-#' txt <- speeches$anforandetext
-#' anforandetext_replace_collocation(txt, collocation_folder)
+#' \dontrun{
+#'   collocation_folder <- "RPackage/data-raw/collocations/"
+#'   txt <- speeches$anforandetext
+#'   anforandetext_replace_collocation(txt, collocation_folder)
+#' }
 #' 
 #' @keywords Internal
 anforandetext_replace_collocation <- function(anforandetext, collocation_folder){

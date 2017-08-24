@@ -1,6 +1,8 @@
 #' Clean the parti variable in the corpus file
 #'
-#' @param parti a character vector from anforandetext in corpus file
+#' @param parti a factor vector from parti in a \code{speeches} \code{data_frame}
+#' @param talare a factor vector from talare in a \code{speeches} \code{data_frame}
+#' @param party_errors_file a csv file containing the variables \code{wrong_parti}, \code{true_parti} and \code{talare}
 #'
 #' @keywords Internal
 parti_clean <- function(parti, talare, party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv"){
