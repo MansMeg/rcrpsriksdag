@@ -15,9 +15,11 @@ anforandetext_replace_collocation(anforandetext, collocation_folder)
 Replace collocations in data-raw collocations
 }
 \examples{
-collocation_folder <- "RPackage/data-raw/collocations/"
-txt <- speeches$anforandetext
-anforandetext_replace_collocation(txt, collocation_folder)
+\dontrun{
+  collocation_folder <- "RPackage/data-raw/collocations/"
+  txt <- speeches$anforandetext
+  anforandetext_replace_collocation(txt, collocation_folder)
+}
 
 }
 \keyword{Internal}

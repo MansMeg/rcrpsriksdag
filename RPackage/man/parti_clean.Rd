@@ -8,7 +8,11 @@ parti_clean(parti, talare,
   party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv")
 }
 \arguments{
-\item{parti}{a character vector from anforandetext in corpus file}
+\item{parti}{a factor vector from parti in a \code{speeches} \code{data_frame}}
+
+\item{talare}{a factor vector from talare in a \code{speeches} \code{data_frame}}
+
+\item{party_errors_file}{a csv file containing the variables \code{wrong_parti}, \code{true_parti} and \code{talare}}
 }
 \description{
 Clean the parti variable in the corpus file

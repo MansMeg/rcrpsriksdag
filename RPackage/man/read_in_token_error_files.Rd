@@ -7,7 +7,7 @@
 read_in_token_error_files(token_errors_folder)
 }
 \arguments{
-\item{collocation_folder}{a path to a folder with files with one collocation per row.}
+\item{token_errors_folder}{a path to a folder with error files.}
 }
 \description{
 Read in the files in collocation folders

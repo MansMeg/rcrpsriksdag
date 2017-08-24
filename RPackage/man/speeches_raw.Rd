@@ -12,6 +12,6 @@ Debates in the Swedish parliament (raw corpus)
 Raw data containing debates in the Swedish parliament.
 }
 \seealso{
-\link{speeches}
+\link{speeches} \link{speeches_sentence_raw}
 }
 \keyword{data}

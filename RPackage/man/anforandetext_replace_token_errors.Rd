@@ -7,17 +7,18 @@
 anforandetext_replace_token_errors(speeches, token_errors_folder)
 }
 \arguments{
-\item{token_errors_folder}{a path to a folder with files with one collocation per row.}
+\item{speeches}{a \code{speeches} \code{data_frame}}
 
-\item{anforandetext}{a character vector from anforandetext in corpus file}
+\item{token_errors_folder}{a path to a folder with files with one collocation per row.}
 }
 \description{
 Replace token errors in anforandetext
 }
 \examples{
-token_errors_folder <- "RPackage/data-raw/dash_errors"
-token_errors_folder <- "RPackage/data-raw/token_errors/"
-anforandetext_replace_collocation(txt, token_errors_folder)
-
+\dontrun{
+  token_errors_folder <- "RPackage/data-raw/dash_errors"
+  token_errors_folder <- "RPackage/data-raw/token_errors/"
+  anforandetext_replace_collocation(txt, token_errors_folder)
+}
 }
 \keyword{Internal}
