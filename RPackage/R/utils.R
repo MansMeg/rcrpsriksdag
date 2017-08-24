@@ -22,7 +22,7 @@ get_git_sha1 <- function(repo = ".") {
 #' 
 #' @keywords Internal
 compute_vocabulary_size <- function(corpus){
-  corpus <- rcrpsriksdag::tokenize_speeches(corpus, rare_word_limit = 0, stop_list = NULL)
+  corpus <- tokenize_speeches(corpus, rare_word_limit = 0, stop_list = NULL)
   word_freq <- dplyr::count(corpus, token)
 
   nrow(word_freq)
@@ -35,7 +35,7 @@ compute_vocabulary_size <- function(corpus){
 compute_collocation_size <- function(collocation_folder){
   checkmate::assert_directory_exists(collocation_folder)
   
-  raw <- rcrpsriksdag:::read_in_collocation_files(collocation_folder)
+  raw <- read_in_collocation_files(collocation_folder)
   
   sum(unlist(lapply(raw, length)))
 }
