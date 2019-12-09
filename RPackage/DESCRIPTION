@@ -18,5 +18,6 @@ Imports:
   dplyr,
   git2r,
   Matrix
-RoxygenNote: 6.1.0
+RoxygenNote: 7.0.1
 Suggests: testthat
+Encoding: UTF-8

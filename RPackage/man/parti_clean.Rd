@@ -4,8 +4,11 @@
 \alias{parti_clean}
 \title{Clean the parti variable in the corpus file}
 \usage{
-parti_clean(parti, talare,
-  party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv")
+parti_clean(
+  parti,
+  talare,
+  party_errors_file = "RPackage/data-raw/data_errors/party_errors.csv"
+)
 }
 \arguments{
 \item{parti}{a factor vector from parti in a \code{speeches} \code{data_frame}}
